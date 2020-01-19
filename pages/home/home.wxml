@@ -1,0 +1,91 @@
+<view class="main">
+  <view class="header">
+    <image class="header-pic" src="../../static/img/pic-home/c.jpg" />
+    <view class="header-main">
+      <view class="header-main-choose">
+        <wux-icon type="md-repeat" size="20" />
+        <view class="header-main-choose-word">切换小区</view>
+      </view>
+      <view class="header-main-uptown">
+        <view class="header-main-uptown-title">{{uptownName}}</view>
+        <view class="header-main-uptown-people">小区已入住{{uptownPeople}}人</view>
+      </view>
+    </view>
+  </view>
+  <view class=".area_selection">
+    <wux-tabs defaultCurrent="tab1" theme="positive">
+      <wux-tab key="tab1" title="86小区"></wux-tab>
+      <wux-tab disabled key="tab2" title="86城际"></wux-tab>
+    </wux-tabs>
+  </view>
+
+
+  <!-- 时间 | 方向 选择 -->
+  <view class="time_choose_black">
+    <view class="time_choose">
+      <view class="time_choose_timeframe">
+        时间
+        <view class="time_choose_timeframe-button">
+          <wux-button block type="positive" wx:if="{{time == 1}}" bindtap="clicktime1">工作日</wux-button>
+          <wux-button block outline type="positive" wx:if="{{time == 2}}" bindtap="clicktime1">工作日</wux-button>
+        </view>
+        <view class="time_choose_timeframe-button">
+          <wux-button block outline type="positive" wx:if="{{time == 1}}" bindtap="clicktime2">周末</wux-button>
+          <wux-button block type="positive" wx:if="{{time == 2}}" bindtap="clicktime2">周末</wux-button>
+        </view>
+      </view>
+      <view class="time_choose_direction">
+        方向
+        <view class="time_choose_timeframe-button">
+          <wux-button block type="positive" wx:if="{{direction == 1}}" bindtap="clickdirection1">出门</wux-button>
+          <wux-button block outline type="positive" wx:if="{{direction == 2}}" bindtap="clickdirection1">出门</wux-button>
+        </view>
+        <view class="time_choose_timeframe-button">
+          <wux-button block outline type="positive" wx:if="{{direction == 1}}" bindtap="clickdirection2">回家</wux-button>
+          <wux-button block type="positive" wx:if="{{direction == 2}}" bindtap="clickdirection2">回家</wux-button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="car" wx:for="{{car}}" wx:for-index="index" wx:for-item="item">
+    <view class="car_destination">
+      <view class>
+        <view class="car_destination_div" />
+      </view>
+      <view class="car_destination_word">{{item.lineDestination}}</view>
+    </view>
+    <view class="car_card">
+      <view class="car_card_line">
+        <view class="car_card_line_title">{{item.lineName}}</view>
+        <view class="car_card_line_money">￥{{item.lineMoney}}</view>
+      </view>
+      <view class="car_card_groove">
+        <view class="car_card_groove_left"></view>
+        <view class="car_card_groove_right"></view>
+      </view>
+      <view class="car_card_details">
+        <view class="car_card_details_origin">
+          <view>
+            <view class="car_card_details_origin_div"></view>
+          </view>
+          <view class="car_card_details_origin_word">{{item.lineOrigin}}</view>
+        </view>
+        <view class="car_card_details_destination">
+          <view>
+            <view class="car_card_details_destination_div"></view>
+          </view>
+          <view class="car_card_details_destination_word">{{item.lineDestination}}</view>
+        </view>
+      </view>
+      <view class="car_card_time">
+        <view wx:for="{{item.lineTime}}" wx:for-index="i" wx:for-item="it" class="car_card_time_item">
+          <wux-button block outline type="positive" bindtap="buyTicket" data-item="{{item}}" data-it="{{it}}">{{it}}
+          </wux-button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+  </view>
+</view>

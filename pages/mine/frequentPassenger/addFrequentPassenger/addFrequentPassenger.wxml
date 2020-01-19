@@ -1,0 +1,46 @@
+<!-- pages/mine/frequentPassenger/addFrequentPassenger/addFrequentPassenger.wxml -->
+<view>
+  <view class="page__hd">
+    <wux-form id="wux-form">
+      <wux-cell-group name="ticketType">
+        <wux-field name="ticketType" initialValue="{{aPassenger.ticketType}}">
+          <wux-popup-select options="{{ ticketTypeOptions }}" bind:change="onPopupSelectChange">
+            <wux-cell title="乘客类型" is-link extra="{{aPassenger.ticketType}}"></wux-cell>
+          </wux-popup-select>
+        </wux-field>
+      </wux-cell-group>
+      <wux-cell-group>
+        <wux-cell hover-class="none">
+          <wux-field name="name">
+            <wux-input label="姓名" />
+          </wux-field>
+        </wux-cell>
+      </wux-cell-group>
+      <wux-cell-group>
+        <wux-cell hover-class="none">
+          <wux-field name="cellphone">
+            <wux-input label="手机号" />
+          </wux-field>
+        </wux-cell>
+      </wux-cell-group>
+      <wux-cell-group>
+        <wux-cell hover-class="none">
+          <wux-field name="idcard">
+            <wux-input label="身份证号码" />
+          </wux-field>
+        </wux-cell>
+      </wux-cell-group>
+      <wux-cell-group >
+        <wux-cell title="设为默认乘客">
+          <wux-field name="isDefaultPassenger" initialValue="{{ isDefaultPassenger }}" valuePropName="inputChecked" slot="footer">
+            <wux-switch />
+          </wux-field>
+        </wux-cell>
+      </wux-cell-group>
+      <view class="btn-area">
+        <wux-button size="default" type="positive" bindtap="formSubmit">添加</wux-button>
+        <!-- <wux-button size="default" bindtap="onReset">重置</wux-button> -->
+      </view>
+    </wux-form>
+  </view>
+</view>

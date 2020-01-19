@@ -1,0 +1,16 @@
+<!-- pages/mine/mine.wxml -->
+<view class="container">
+  <view class="header">
+    <view>
+      <wux-image wux-class="image" shape="circle" src="/static/img/a.jpg" height="80px" width="80px" />
+    </view>
+    <view class="headertext">小小</view>
+    <view class="headertext">phoneNumberBindHere</view>
+    <view class="headertext">信用值：750</view>
+  </view>
+  <view class="content">
+    <wux-cell thumb="/static/img/1.png" title="车票" is-link extra="0张" bind:click="cellCLick"	></wux-cell>
+    <wux-cell thumb="/static/img/2.png" title="常用乘客" is-link url="/pages/mine/frequentPassenger/frequentPassenger"></wux-cell>
+    <wux-cell thumb="/static/img/3.png" title="小区" is-link extra="万科金色梦想" url="/pages/mine/uptown/uptown"></wux-cell>
+  </view>
+</view>

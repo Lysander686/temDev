@@ -1,0 +1,9 @@
+<view>
+  <view>
+    <wux-cell-group wx:for="{{frequentPassengers}}">
+      <!-- TODO: only cut out the first few letters of id card -->
+      <wux-cell thumb="http://cdn.skyvow.cn/logo.png" title="{{item}}" label="身份证号:{{item.Id}}"></wux-cell>
+    </wux-cell-group>
+  </view>
+  <wux-button block type="positive" bindtap="addFrequentPassenger">添加常用乘客</wux-button>
+</view>

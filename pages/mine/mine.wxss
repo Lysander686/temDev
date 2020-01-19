@@ -1,0 +1,41 @@
+/* pages/mine/mine.wxss */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to right, #4bb0ff, #6149f6);
+    height: 400rpx;
+    width: 100%;
+    padding-top: 30rpx;
+  }
+  .headertext {
+    padding: 4rpx;
+    color: #fffffe;
+    font-size: 25rpx;
+  }
+  .content{
+      width: 100%;
+  }
+  /* .cell{
+      display: flex;
+      padding: 20rpx;
+  }
+  .cellright{
+      flex-grow: 1;
+      text-align: right;
+  }
+  .cellmiddle{
+      margin-left: 40rpx;
+      margin-top: 15rpx;
+  } */
+  .wux-cell__text{
+    font-size: 30rpx;
+  }
+  .wux-cell__ft{
+    font-size: 30rpx;
+  }

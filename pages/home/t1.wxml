@@ -1,0 +1,9 @@
+<view class="header-main-choose">
+    <wux-icon type="md-repeat" size="20" />
+    <view class="header-main-choose-word">切换小区</view>
+</view>
+<view class="header-main-uptown">
+    <view class="header-main-uptown-title">{{uptownName}}</view>
+    <view class="header-main-uptown-people">小区已入住{{uptownPeople}}人</view>
+</view>
+</view>

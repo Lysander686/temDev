@@ -1,0 +1,79 @@
+<wux-dialog id="wux-dialog" />
+<view class="contain">
+    <!-- <wux-navbar leftText="返回" bind:click="onClick" /> -->
+    <view style="height:2rem;background-color:#f6f7fb"></view>
+    <view class="header">
+        <view class="header_title">
+            <view class="header_title_line">{{card.lineName}}</view>
+            <view class="header_title_time">{{card.lineTime}}</view>
+        </view>
+        <view class="buyticket_button_height">
+            <view class>
+                <view class="buyticket_button_geton_view" />
+            </view>
+            <view class="buyticket_button_value">{{getonName}}</view>
+            <view class>
+                <view class="buyticket_button_getoff_view" />
+            </view>
+            <view class="buyticket_button_value">{{getoffName}}</view>
+        </view>
+        <view class="header_prompt">
+            <view class="header_prompt_title">温馨提示</view>
+            <view class="header_prompt_report">
+                本线路需要实名购票，为杜绝安全隐患，避免超载，请自觉为儿童买座位票，儿童乘客可用户口簿上的身份证号。司机有权拒绝不购票儿童上车，谢谢合作。
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="content_add">
+            <view class="contenticon" bindtap="addPassenger">
+                <wux-icon type="ios-add-circle-outline" size="20" />
+                添加新乘客
+            </view>
+        </view>
+        <view class="content_passenger" wx:for="{{currentData}}" wx:for-index="i" wx:key="item" wx:for-item="item">
+            <view class="header_title1">
+                <view class="header_title_name">
+                    <view class="header_title_name_user">{{item.passengerName}}</view>
+                    <view class="header_title_name_default">{{item.passengerDefault}}</view>
+                </view>
+                <view class="header_title_type">
+                    <view class="header_title_type_adult">{{item.passengerType}}</view>
+                    <view class="header_title_type_id">{{item.passengerIdCard}}</view>
+                </view>
+            </view>
+            <view class="header_revision">
+                <view class="header_revision_delete">
+                    <wux-icon type="ios-trash" size="25" bindtap="deletePassenger" data-index="{{i}}" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tail">
+        <view class="tail_now">
+            <view class="buyticket_inform_main">
+                <wux-icon type="ios-checkbox" size="20" />
+                我已阅读并同意
+                <text class="buyticket_inform_main_pick" bindtap="showPopup">《购票退票规则》</text>
+                和
+                <text class="buyticket_inform_main_pick" bindtap="showPopup2">《用户须知》</text>
+            </view>
+        </view>
+        <view class="tail_payment">
+            <view class="tail_payment_details">
+                <view class="tail_payment_details_price">
+                    <view class="tail_payment_details_price_p">共{{all}}元</view>
+                    <view class="tail_payment_details_price_check">
+                        查看明细
+                        <wux-icon type="ios-arrow-up" size="20" />
+                    </view>
+                    <!-- <van-popup v-model="show3" position="bottom" :style="{ height: '15%' }" class="popup">
+              <view>{{passengerType}}票</view>
+              <view>{{card.lineMoney}}*{{ticketNumber}}={{all}}</view>
+            </van-popup> -->
+                </view>
+            </view>
+            <view class="tail_payment_confrim" bindtap="confirmPay">确认购票</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "车票",
+  "usingComponents": {
+    "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
+      "wux-tabs": "../../miniprogram_npm/wux-weapp/tabs/index",
+      "wux-tab": "../../miniprogram_npm/wux-weapp/tab/index"
+  }
+}

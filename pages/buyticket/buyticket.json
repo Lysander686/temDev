@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "购票",
+  "usingComponents": {
+    "wux-cell": "../../miniprogram_npm/wux-weapp/cell/index",
+    "wux-button": "../../miniprogram_npm/wux-weapp/button/index",
+    "wux-popup": "../../miniprogram_npm/wux-weapp/popup/index",
+    "wux-navbar": "../../miniprogram_npm/wux-weapp/navbar/index",
+    "wux-icon": "../../miniprogram_npm/wux-weapp/icon/index",
+    "wux-dialog": "../../miniprogram_npm/wux-weapp/dialog/index",
+    "wux-radio": "../../miniprogram_npm/wux-weapp/radio/index"
+  }
+}

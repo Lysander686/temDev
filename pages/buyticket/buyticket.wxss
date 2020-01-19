@@ -1,0 +1,261 @@
+.contain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f6f7fb;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 15rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 3px #c8c8c8;
+}
+
+.header_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1rem dashed #999;
+    margin: 0rem 1rem 1rem 1rem;
+    padding-top: 1rem;
+}
+
+.header_title_line {
+    margin-left: 1rem;
+    font-weight: 900;
+}
+
+.header_title_time {
+    margin-right: 1rem;
+    font-weight: 700;
+    color: #334ef9;
+}
+
+.header_prompt {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_prompt_title {
+    padding: 0.3rem;
+    font-size: 0.85rem;
+    margin-left: 1rem;
+    width: 8rem;
+    height: 2rem;
+    background-color: yellow;
+    border-radius: 0.5rem;
+}
+
+.header_prompt_report {
+    font-size: 0.75rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.buyticket_button_height {
+    display: flex;
+    padding: 1rem;
+}
+
+.buyticket_button_geton_div {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #ff618b;
+    border-radius: 5rem;
+}
+
+.buyticket_button_value {
+    font-size: 0.85rem;
+    text-align: left;
+    width: 6rem;
+    margin-left: 0.25rem;
+    color: #747474;
+}
+
+.buyticket_button_getoff_div {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #7ed321;
+    border-radius: 5rem;
+}
+
+.buyticket_button_time {
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+}
+
+.content_passenger {
+    display: flex;
+    margin: 15px;
+    height: auto;
+    background-color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    /* height: 5rem; */
+    margin: 1.5rem 1.5rem 9rem 1.5rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 3px 3px #c8c8c8;
+}
+
+.header_title1 {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: left;
+}
+
+.header_title_name {
+    display: flex;
+    margin: 0.5rem 0rem 0.5rem 1rem;
+}
+
+.header_title_name_default {
+    margin-left: 1rem;
+    background-color: #334ef9;
+    color: #fff;
+}
+
+.header_title_type {
+    display: flex;
+    margin: 0rem 0rem 0.25rem 1rem;
+    font-size: 0.75rem;
+    color: #747474;
+}
+
+.header_title_type_id {
+    margin-left: 1rem;
+}
+
+.header_revision {
+    margin-right: 0.75rem;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.header_revision_edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.header_revision_delete {
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    font-size: 1.5rem;
+}
+
+.content_add {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    /* margin: 15px; */
+    height: 1rem;
+    flex-direction: column;
+    border-bottom: 1px solid #eee;
+    color: #334ef9;
+    font-weight: bolder;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.van-icon {
+    padding-right: 5px;
+    /* font-size: 1rem */
+}
+
+.tail {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 5.5rem;
+    bottom: 0px;
+    background-color: #fff;
+    padding: 0rem 1rem 0rem 1rem;
+    width: 100%;
+}
+
+.van-radio-group {
+    display: flex;
+}
+
+.tail_now {
+    /* display: flex; */
+    height: 3rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.5rem;
+    margin-right: 2rem;
+}
+
+.buyticket_inform_main {
+    font-size: 1rem;
+    /* color: #999999; */
+}
+
+.buyticket_inform_main_pick {
+    text-decoration: underline;
+    color: #8c93dd;
+}
+
+.tail_payment {
+    /* position: fixed;
+    bottom: 0rem; */
+    display: flex;
+    height: 2rem;
+}
+
+.tail_payment_details {
+    flex-grow: 1;
+}
+
+.tail_payment_details_price {
+    margin: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tail_payment_details_price_p {
+    display: flex;
+    justify-content: center;
+}
+
+.tail_payment_details_price_check {
+    display: flex;
+    justify-content: center;
+}
+
+.tail_payment_confrim {
+    display: flex;
+    margin-left: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    background-color: #334ef9;
+    color: #fff;
+    text-align: center;
+    margin-right: 1rem;
+}
+
+.popup {
+    display: flex;
+    justify-content: space-around;
+}
+

@@ -1,0 +1,149 @@
+<view class="page">
+    <wux-tabs current="tab1" bind:change="change" theme="positive">
+        <wux-tab class="content" key="tab1" title="当天发车"></wux-tab>
+        <wux-tab class="content" key="tab2" title="非当天发车"></wux-tab>
+    </wux-tabs>
+    <view wx:if="{{current=='tab1'}}" class="container">
+        <view class="container_alert">
+            <view class="container_alert_left">温馨提示</view>
+            <view class="container_alert_right">
+                <view class="container_alert_right_a">车票仅有效于当前班次，请对号入座，发车前一小时可改签</view>
+                <view class="container_alert_right_b">联系客服</view>
+            </view>
+        </view>
+        <view class="container_content" wx:for="{{currentDataToday}}" wx:for-index="index" wx:for-item="item">
+            <view class="car_card">
+                <view class="car_card_line">
+                    <view class="car_card_line_title">
+                        <view class="car_card_line_date" wx:for="{{item.date}}" wx:for-item="it" wx:for-index="i">
+                            {{it}}
+                        </view>
+                        <view class="car_card_line_time">{{item.time}}开</view>
+                    </view>
+                    <view class="car_card_line_money">共{{item.ticketNumbers}}张</view>
+                </view>
+                <view class="car_card_groove">
+                    <view class="car_card_groove_left"></view>
+                    <view class="car_card_groove_right"></view>
+                </view>
+                <view class="car_card_details">
+                    <view class="car_card_details_origin">
+                        <view class="car_card_details_origin_view"></view>
+                        <view class="car_card_details_origin_word">
+                            <view class="car_card_details_origin_word_first">{{item.origin}}</view>
+                            <view class="car_card_details_origin_word_second">
+                                <view class="car_card_details_origin_word_second_lower">上车点</view>
+                                <view class="car_card_details_origin_word_second_lowerdetail">
+                                    {{item.getOn}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="car_card_details_destination">
+                        <view class="car_card_details_destination_view"></view>
+                        <view class="car_card_details_destination_word">
+                            <view class="car_card_details_destination_word_first">
+                                {{item.destination}}
+                            </view>
+                            <view class="car_card_details_destination_word_second">
+                                <view class="car_card_details_destination_word_second_aboard">
+                                    下车点
+                                </view>
+                                <view class="car_card_details_destination_word_second_aboarddetail">
+                                    {{item.getOff}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="car_card_time" wx:for="{{item.passenger}}" wx:for-index="j" wx:for-item="t">
+                    <view class="car_card_time_name">{{t.passengerName}}</view>
+                    <view class="car_card_time_other">
+                        <view>{{t.passengerType}}</view>
+                        <view>{{t.passengerIdCard}}</view>
+                    </view>
+                </view>
+                <view class="car_card_time_order">{{item.createTime}}下单</view>
+                <view class="car_card_confirm">
+                    <view class="car_card_confirm_payment">{{payment}}</view>
+                    <view class="car_card_confirm_canel">{{cancel}}</view>
+                </view>
+                <!-- <view class="line1" v-if="item.payment==1" />
+                <view class="line2" v-if="item.payment==2" />
+                <view class="line3" v-if="item.payment==3" />
+                <view class="line4" v-if="item.payment==4" /> -->
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{current=='tab2'}}" class="otherday">
+    <view class="container_alert_otherday">
+            <view class="container_alert_left">温馨提示</view>
+            <view class="container_alert_right">
+                <view class="container_alert_right_a">车票仅有效于当前班次，请对号入座，发车前一小时可改签</view>
+                <view class="container_alert_right_b">联系客服</view>
+            </view>
+        </view>
+        <view class="container_content" wx:for="{{currentDataToday}}" wx:for-index="index" wx:for-item="item">
+            <view class="car_card">
+                <view class="car_card_line">
+                    <view class="car_card_line_title">
+                        <view class="car_card_line_date" wx:for="{{item.date}}" wx:for-item="it" wx:for-index="i">
+                            {{it}}
+                        </view>
+                        <view class="car_card_line_time">{{item.time}}开</view>
+                    </view>
+                    <view class="car_card_line_money">共{{item.ticketNumbers}}张</view>
+                </view>
+                <view class="car_card_groove">
+                    <view class="car_card_groove_left"></view>
+                    <view class="car_card_groove_right"></view>
+                </view>
+                <view class="car_card_details">
+                    <view class="car_card_details_origin">
+                        <view class="car_card_details_origin_view"></view>
+                        <view class="car_card_details_origin_word">
+                            <view class="car_card_details_origin_word_first">{{item.origin}}</view>
+                            <view class="car_card_details_origin_word_second">
+                                <view class="car_card_details_origin_word_second_lower">上车点</view>
+                                <view class="car_card_details_origin_word_second_lowerdetail">
+                                    {{item.getOn}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="car_card_details_destination">
+                        <view class="car_card_details_destination_view"></view>
+                        <view class="car_card_details_destination_word">
+                            <view class="car_card_details_destination_word_first">
+                                {{item.destination}}
+                            </view>
+                            <view class="car_card_details_destination_word_second">
+                                <view class="car_card_details_destination_word_second_aboard">
+                                    下车点
+                                </view>
+                                <view class="car_card_details_destination_word_second_aboarddetail">
+                                    {{item.getOff}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="car_card_time" wx:for="{{item.passenger}}" wx:for-index="j" wx:for-item="t">
+                    <view class="car_card_time_name">{{t.passengerName}}</view>
+                    <view class="car_card_time_other">
+                        <view>{{t.passengerType}}</view>
+                        <view>{{t.passengerIdCard}}</view>
+                    </view>
+                </view>
+                <view class="car_card_time_order">{{item.createTime}}下单</view>
+                <view class="car_card_confirm">
+                    <view class="car_card_confirm_payment" >{{payment}}</view>
+                    <view class="car_card_confirm_canel">{{cancel}}</view>
+                </view>
+                <!-- <view class="line1" v-if="item.payment==1" />
+                <view class="line2" v-if="item.payment==2" />
+                <view class="line3" v-if="item.payment==3" />
+                <view class="line4" v-if="item.payment==4" /> -->
+            </view>
+        </view></view>
+</view>

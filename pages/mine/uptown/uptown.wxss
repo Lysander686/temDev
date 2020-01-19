@@ -1,0 +1,25 @@
+/* pages/mine/uptown/uptown.wxss */
+.title{
+  padding-left: 20rpx;
+  background-color:#FFF0F5;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+/* .hotname{
+  display: flex;
+  justify-content: space-around;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+  border-bottom:1rpx solid #FFF5EE ;
+} */
+.hot{
+  display: flex;
+  flex-wrap: wrap;
+}
+.hotname{
+  width: 320rpx;
+  text-align: center;
+  /* margin-top: 30rpx;
+  margin-bottom: 30rpx; */
+}

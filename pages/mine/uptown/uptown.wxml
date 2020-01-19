@@ -1,0 +1,13 @@
+<!-- pages/mine/uptown/uptown.wxml -->
+<wux-dialog id="wux-dialog" />
+<wux-dialog id="wux-dialog--alert" />
+<view>
+  <wux-search-bar clear placeholder="请输入小区名" bind:blur="onSearch" />
+  <view class="title">热门小区</view>
+  <view class="hot">
+    <view wx:for="{{uptowns}}" class="hotname">
+      <!-- <text data-uptownId="{{item.uptownId}}" bindtap="ddd"> {{item.uptownName}}</text> -->
+      <wux-button block type="light" bind:click="alert">{{item.uptownName}}</wux-button>
+    </view>
+  </view>
+</view>

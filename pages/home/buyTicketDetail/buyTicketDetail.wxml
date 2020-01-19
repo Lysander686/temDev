@@ -1,0 +1,105 @@
+<!--pages/home/buyTicketDetail/buyTicketDetail.wxml-->
+<wxs module="m1">
+var toString = function(item) {
+  
+ return JSON.stringify(item);
+//   return item;
+}
+
+module.exports.toString = toString;
+</wxs>
+<!-- 彈出框 -->
+<wux-popup closable visible="{{ visible1 }}" title="Delete" content="Are you sure???" bind:close="onClose1" bind:closed="onClosed1">
+    <view slot="footer" class="popup__button" bindtap="close1">OK</view>
+</wux-popup>
+
+<wux-popup position="bottom" visible="{{ visible2 }}" bind:close="onClose2">
+    <wux-cell-group title="Your fathers">
+        <wux-cell hover-class="none" title="Jack Ma"></wux-cell>
+        <wux-cell hover-class="none" title="Pony"></wux-cell>
+        <wux-cell hover-class="none">
+            <wux-button block type="balanced" bindtap="close2">Yes</wux-button>
+        </wux-cell>
+    </wux-cell-group>
+</wux-popup>
+
+
+
+<view class="main">
+  <view class="buyticket">
+    <view style="height:2rem;background-color:#f6f7fb"></view>
+    <view class="header">
+      <view class="header_title">
+        <view class="header_title_line">{{line.lineName}}</view>
+        <view class="header_title_time">{{line.lineTime}}出发</view>
+        <!-- <view class>{{line}}</view> -->
+      </view>
+      <view class="header_prompt">
+        <view class="header_prompt_title">温馨提示</view>
+        <view class="header_prompt_report">本线路需要实名购票，为杜绝安全隐患，避免超载，请自觉为儿童买座位票，儿童乘客可用户口簿上的身份证号。司机有权拒绝不购票儿童上车，谢谢合作。</view>
+      </view>
+    </view>
+  </view>
+  <view class="buyticket_detail">
+    <view class="buyticket_detail_title">
+      <view class="buyticket_detail_title_left">请选择上车地点</view>
+      <view class="buyticket_detail_title_right">上车地点示意图</view>
+    </view>
+    <view class="buyticket_detail_geton">
+      <view class="buyticket_detail_body_geton" wx:for="{{getonstation}}" wx:for-index="index" wx:for-item="item">
+        <view class="buyticket_detail_body_un_state" wx:if="{{geton != item.sortNumber}}" bindtap="choose_geton" data-item="{{m1.toString(item)}}">
+          <view class="buyticket_detail_body_un_div" />
+          <view class="buyticket_detail_body_un_time">{{item.stationTime}}</view>
+          <view class="buyticket_detail_body_un_name">{{item.stationName}}</view>
+          <view class="buyticket_detail_body_un_detail">[{{item.stationType}}]</view>
+        </view>
+        <view class="buyticket_detail_body_state" wx:if="{{geton==item.sortNumber}}">
+          <view class="flex">
+            <view class="buyticket_detail_body_div" />
+            <view class="buyticket_detail_body_time">{{item.stationTime}}</view>
+            <view class="buyticket_detail_body_name">{{item.stationName}}</view>
+            <view class="buyticket_detail_body_detail">[{{item.stationType}}]</view>
+          </view>
+          <view class="buyticket_detail_body_value">{{item.stationRemark}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="buyticket_detail_title2">
+      <view class="buyticket_detail_title_left">请选择下车地点</view>
+      <view class="buyticket_detail_title_right"></view>
+    </view>
+    <view class="buyticket_detail_geton">
+      <view class="buyticket_detail_body_geton" wx:for="{{getoffstation}}" wx:for-index="index" wx:for-item="item">
+        <view class="buyticket_detail_body_un_state" wx:if="{{getoff != item.sortNumber}}">
+          <view class="buyticket_detail_body_un_div" />
+          <view class="buyticket_detail_body_un_time">{{item.stationTime}}</view>
+          <view class="buyticket_detail_body_un_name">{{item.stationName}}</view>
+          <view class="buyticket_detail_body_un_detail">[{{item.stationType}}]</view>
+        </view>
+        <view class="buyticket_detail_body_state" wx:if="{{getoff == item.sortNumber}}">
+          <view class="flex">
+            <view class="buyticket_detail_body_div" />
+            <view class="buyticket_detail_body_time">{{item.stationTime}}</view>
+            <view class="buyticket_detail_body_name">{{item.stationName}}</view>
+            <view class="buyticket_detail_body_detail">[{{item.stationType}}]</view>
+          </view>
+          <view class="buyticket_detail_body_value">{{item.stationRemark}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="buyticket_price">￥{{line.lineMoney}}/座</view>
+    <view>
+      <wux-button block type="positive" class="buyticket_button" bindtap="go">购票</wux-button>
+    </view>
+    <view class="info">
+      <view>*根据交通法规要求，一人一座，儿童也需购票；</view>
+      <view>*车型、车牌号请购票后到【车票】页面查看；</view>
+      <view class>*请提前5分钟候车，正常情况下班车准点发出，请认准车牌号上车，并对号入座，逾时不候；</view>
+      <view class>*发车前20分钟不可退票，因个人原因误车恕不退票；</view>
+      <view class>*如需更改班次请尽早退票或改签；</view>
+      <view class>*非上车前购票请到首页补票窗口补票,严惩逃票行为；</view>
+      <view class>*有任何疑问请联系“120，110”，最终解释权归“86巴士”所有。</view>
+    </view>
+  </view>
+
+</view>

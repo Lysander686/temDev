@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/ticket/ticket",
+    "pages/mine/mine",
+    "pages/mine/frequentPassenger/frequentPassenger",
+    "pages/logs/logs",
+    "pages/buyticket/buyticket",
+    "pages/mine/uptown/uptown",
+    "pages/buyticket/ticketinfo/ticketinfo",
+    "pages/buyticket/userinfo/userinfo",
+    "pages/mine/frequentPassenger/addFrequentPassenger/addFrequentPassenger"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "购票",
+        "iconPath": "static/img/home.png",
+        "selectedIconPath": "static/img/home.png"
+      },
+      {
+        "pagePath": "pages/ticket/ticket",
+        "text": "车票",
+        "iconPath": "static/img/ticket.png",
+        "selectedIconPath": "static/img/ticket.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/img/mine.png",
+        "selectedIconPath": "static/img/mine.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "wux-navbar": "/miniprogram_npm/wux-weapp/navbar/index",
+    "wux-icon": "/miniprogram_npm/wux-weapp/icon/index",
+    "wux-cell-group": "/miniprogram_npm/wux-weapp/cell-group/index",
+    "wux-cell": "/miniprogram_npm/wux-weapp/cell/index",
+    "wux-button": "/miniprogram_npm/wux-weapp/button/index",
+    "wux-form": "/miniprogram_npm/wux-weapp/form/index",
+    "wux-field": "/miniprogram_npm/wux-weapp/field/index",
+    "wux-slider": "/miniprogram_npm/wux-weapp/slider/index",
+    "wux-rater": "/miniprogram_npm/wux-weapp/rater/index",
+    "wux-input-number": "/miniprogram_npm/wux-weapp/input-number/index",
+    "wux-textarea": "/miniprogram_npm/wux-weapp/textarea/index",
+    "wux-input": "/miniprogram_npm/wux-weapp/input/index",
+    "wux-checkbox-group": "/miniprogram_npm/wux-weapp/checkbox-group/index",
+    "wux-checkbox": "/miniprogram_npm/wux-weapp/checkbox/index",
+    "wux-radio-group": "/miniprogram_npm/wux-weapp/radio-group/index",
+    "wux-radio": "/miniprogram_npm/wux-weapp/radio/index",
+    "wux-switch": "/miniprogram_npm/wux-weapp/switch/index",
+    "wux-picker": "/miniprogram_npm/wux-weapp/picker/index",
+    "wux-date-picker": "/miniprogram_npm/wux-weapp/date-picker/index",
+    "wux-popup-select": "/miniprogram_npm/wux-weapp/popup-select/index",
+    "wux-dialog": "/miniprogram_npm/wux-weapp/dialog/index",
+    "wux-search-bar": "/miniprogram_npm/wux-weapp/search-bar/index"
+  }
+}
